@@ -1,14 +1,17 @@
-const mongoose=require('mongoose') ; 
+const mongoose = require("mongoose");
 
-async function main() 
-{
-   await mongoose.connect(`mongodb+srv://sahebpan00:sahebpan00@cluster0.eceoamj.mongodb.net/merntestdb`);
-}
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
 
-main().then(
-    ()=>{ console.log("mongodb connected success..!"    )}
-).catch(
-    (err)=>{ console.log(err); }
-) 
+        console.log("MongoDB connected successfully");
+    } catch (error) {
+        console.error("MongoDB connection failed:", error);
+        process.exit(1);
+    }
+};
 
-module.exports=mongoose;
+module.exports = connectDB;

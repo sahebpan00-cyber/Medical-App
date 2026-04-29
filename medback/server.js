@@ -2,6 +2,9 @@ require("dotenv").config();
 const express = require('express');
 const dotenv = require('dotenv')
 const chatRoute = require('./routes/chat')
+const connectDB = require('./database/dbconnect');
+
+connectDB();
 
 
 dotenv.config(); // to generate the process.env object notation 
