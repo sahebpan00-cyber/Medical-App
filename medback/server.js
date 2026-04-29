@@ -1,50 +1,42 @@
 require("dotenv").config();
-const express = require('express');
-const dotenv = require('dotenv')
-const chatRoute = require('./routes/chat')
-const connectDB = require('./database/dbconnect');
 
-connectDB();
-
-
-dotenv.config(); // to generate the process.env object notation 
+const express = require("express");
 const cors = require("cors");
 
-app.use(cors({
-    origin: "https://medical-app-five-chi.vercel.app"
-}));
+const connectDB = require("./database/dbconnect");
 
-const userRoute = require('./routes/userRoute');
-const doctorRoute = require('./routes/doctorRoute');
+const userRoute = require("./routes/userRoute");
+const doctorRoute = require("./routes/doctorRoute");
 const appointmentRouter = require("./routes/appointmentRouter");
+const chatRoute = require("./routes/chat");
 
+const app = express();   // ✅ FIRST create app
 
-const app = express();
-
-app.use(cors());
+// ✅ Middleware
+app.use(cors({
+    origin: "https://medical-app-five-chi.vercel.app",
+    credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-console.log("userRoute:", typeof userRoute);
-console.log("doctorRoute:", typeof doctorRoute);
-console.log("appointmentRouter:", typeof appointmentRouter);
-console.log("GROQ KEY:", process.env.GROQ_API_KEY);
 
+// ✅ Connect DB
+connectDB();
 
-//register route 
+// Routes
+app.use("/med", userRoute);
+app.use("/doctor", doctorRoute);
+app.use("/appointments", appointmentRouter);
+app.use("/api/chat", chatRoute);
 
-app.use('/med', userRoute);
-app.use('/doctor', doctorRoute);
-app.use('/appointments', appointmentRouter);
-app.use('/api/chat', chatRoute);
-
-
-app.get('/', (req, res) => {
-    res.send('Hello from JWT3 App Server');
+app.get("/", (req, res) => {
+    res.send("Hello from Server");
 });
 
-
+// Server start
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`server is running in the port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
