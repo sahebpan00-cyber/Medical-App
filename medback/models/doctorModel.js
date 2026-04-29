@@ -1,4 +1,4 @@
-const mongoose=require('../database/dbconnect'); 
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
   {
     fullname: {
@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
       unique: true,
-    },    
+    },
     mobile: {
       type: String,
       required: false,
@@ -49,5 +49,5 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const doctor=mongoose.model("meddoctor", userSchema); 
-module.exports=doctor;
+const doctor = mongoose.model("meddoctor", userSchema);
+module.exports = doctor;
