@@ -14,7 +14,7 @@ const AllUsers = () => {
         const fetchUsers = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:5000/med/allusers", {
+                const response = await axios.get("https://medical-app-b2ku.onrender.com/med/allusers", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -57,7 +57,7 @@ const AllUsers = () => {
 
         <div className="allUsers-container">
             <h2>All Users</h2>
-            <button className="btn btn-danger back-btn" onClick={()=>navigate("/admindashboard")}>← Back</button>
+            <button className="btn btn-danger back-btn" onClick={() => navigate("/admindashboard")}>← Back</button>
 
 
             <table className="user-table">
@@ -96,7 +96,7 @@ const AllUsers = () => {
                     ))}
                 </tbody>
             </table>
-           
+
         </div>
     );
 };

@@ -28,7 +28,7 @@ const BookAppointment = () => {
             }
 
             const { data } = await axios.get(
-                `http://localhost:5000/med/getoneuser/${storedUser.id}`,
+                `https://medical-app-b2ku.onrender.com/med/getoneuser/${storedUser.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -47,7 +47,7 @@ const BookAppointment = () => {
     // Fetch specializations
     useEffect(() => {
         const fetchSpecializations = async () => {
-            const { data } = await axios.get("http://localhost:5000/doctor/specializations");
+            const { data } = await axios.get("https://medical-app-b2ku.onrender.com/doctor/specializations");
             setSpecializations(data);
         };
         fetchSpecializations();
@@ -58,7 +58,7 @@ const BookAppointment = () => {
         if (formData.specialization) {
             axios
                 .get(
-                    `http://localhost:5000/doctor/available/${formData.specialization}`
+                    `https://medical-app-b2ku.onrender.com/doctor/available/${formData.specialization}`
                 )
                 .then((res) =>
 
