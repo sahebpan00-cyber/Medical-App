@@ -33,7 +33,7 @@ const AddDoctor = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/doctor/adddoctors",
+        "https://medical-app-b2ku.onrender.com/doctor/adddoctors",
         formData,
         {
           headers: {

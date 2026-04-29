@@ -8,7 +8,7 @@ const MyAppointment = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     const fetchAppointments = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/appointments/user/${user.id}`, {
+            const res = await axios.get(`https://medical-app-b2ku.onrender.com/appointments/user/${user.id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
 

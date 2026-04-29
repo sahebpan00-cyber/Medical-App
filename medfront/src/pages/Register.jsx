@@ -84,7 +84,7 @@ const Register = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:5000/med/register',
+                'https://medical-app-b2ku.onrender.com/med/register',
                 {
                     name: formData.fullName,
                     email: formData.email,

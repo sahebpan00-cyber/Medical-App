@@ -35,7 +35,7 @@ const AllDoctors = () => {
     const handleToggleAvailability = async (id) => {
         try {
             const { data } = await axios.patch(
-                `http://localhost:5000/doctor/toggle-availability/${id}`,
+                `https://medical-app-b2ku.onrender.com/doctor/toggle-availability/${id}`,
                 {},
                 {
                     headers: {
@@ -60,7 +60,7 @@ const AllDoctors = () => {
     const handleDelete = async (id) => {
         try {
             const { data } = await axios.delete(
-                `http://localhost:5000/doctor/deletedoctors/${id}`,
+                `https://medical-app-b2ku.onrender.com/doctor/deletedoctors/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,

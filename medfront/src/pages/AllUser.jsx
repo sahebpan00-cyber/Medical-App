@@ -34,7 +34,7 @@ const AllUsers = () => {
     const handleDelete = async (id) => {
         try {
             const { data } = await axios.delete(
-                `http://localhost:5000/med/deleteuser/${id}`,
+                `https://medical-app-b2ku.onrender.com/med/deleteuser/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,

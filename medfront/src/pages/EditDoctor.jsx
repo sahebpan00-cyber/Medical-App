@@ -20,7 +20,7 @@ const EditDoctor = () => {
   const fetchDoctor = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/doctor/getonedoctors/${id}`,
+        `https://medical-app-b2ku.onrender.com/doctor/getonedoctors/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -44,7 +44,7 @@ const EditDoctor = () => {
 
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/doctor/updatedoctors/${id}`,
+        `https://medical-app-b2ku.onrender.com/doctor/updatedoctors/${id}`,
         doctor,
         {
           headers: {

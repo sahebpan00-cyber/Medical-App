@@ -18,7 +18,7 @@ const Allappointments = () => {
         const fetchAppointments = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:5000/appointments/all", {
+                const response = await axios.get("https://medical-app-b2ku.onrender.com/appointments/all", {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 console.log(response.data);

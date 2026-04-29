@@ -15,34 +15,34 @@ const BookAppointment = () => {
         appointmentDate: "",
         appointmentTime: ""
     });
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     // Fetch logged in user
     const fetchUser = async () => {
-  try {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+        try {
+            const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!storedUser?.id) {
-      console.log("User ID missing");
-      return;
-    }
+            if (!storedUser?.id) {
+                console.log("User ID missing");
+                return;
+            }
 
-    const { data } = await axios.get(
-      `http://localhost:5000/med/getoneuser/${storedUser.id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
+            const { data } = await axios.get(
+                `http://localhost:5000/med/getoneuser/${storedUser.id}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                }
+            );
 
-    console.log(data);
-    setUser(data);
+            console.log(data);
+            setUser(data);
 
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-  }
-};
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
 
     // Fetch specializations
     useEffect(() => {
@@ -60,19 +60,19 @@ const BookAppointment = () => {
                 .get(
                     `http://localhost:5000/doctor/available/${formData.specialization}`
                 )
-                .then((res) => 
-                    
+                .then((res) =>
+
                     setDoctors(res.data));
-                
+
         }
     }, [formData.specialization]);
 
-   
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-       
-        await axios.post("http://localhost:5000/appointments/create", {
+
+        await axios.post("https://medical-app-b2ku.onrender.com/appointments/create", {
             user: user._id,
             doctor: formData.doctor,
             specialization: formData.specialization,
@@ -85,15 +85,15 @@ const BookAppointment = () => {
 
         alert("Appointment Booked Successfully!");
         setTimeout(() => {
-        navigate("/dashboard");
-      }, 1500);
+            navigate("/dashboard");
+        }, 1500);
     };
 
-    
 
-     useEffect(() => {
+
+    useEffect(() => {
         fetchUser();
-      }, []);
+    }, []);
     const today = new Date().toISOString().split("T")[0];
 
 
@@ -207,7 +207,7 @@ const BookAppointment = () => {
                     <div className="btn-section"><div className="col-6 p-4"><button type="submit" className="book-btn">
                         Confirm
                     </button></div>
-                    <div className="col-6 p-4"><button className="cancel-btn" onClick={() => navigate("/dashboard")}>Cancel</button></div></div>
+                        <div className="col-6 p-4"><button className="cancel-btn" onClick={() => navigate("/dashboard")}>Cancel</button></div></div>
                 </form>
             </div>
         </div>

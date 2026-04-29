@@ -23,7 +23,7 @@ const AdminDashboard = () => {
       if (!storedUser?.id) return;
 
       const { data } = await axios.get(
-        `http://localhost:5000/med/getoneuser/${storedUser.id}`,
+        `https://medical-app-b2ku.onrender.com/med/getoneuser/${storedUser.id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -74,15 +74,15 @@ const AdminDashboard = () => {
         </h1>
         {/* PROFILE CARD */}
         <div className="profile-contain">
-        <div className="profile-card">
+          <div className="profile-card">
 
-          <h2>Admin Profile</h2>
+            <h2>Admin Profile</h2>
 
-          <p><strong>Name:</strong> {user.name}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Role:</strong> Admin</p>
+            <p><strong>Name:</strong> {user.name}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>Role:</strong> Admin</p>
 
-        </div>
+          </div>
         </div>
 
         {/* DASHBOARD CARDS */}
@@ -110,7 +110,7 @@ const AdminDashboard = () => {
 
         </div>
 
-        
+
 
       </div>
     </div>

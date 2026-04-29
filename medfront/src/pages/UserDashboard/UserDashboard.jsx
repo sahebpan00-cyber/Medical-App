@@ -8,7 +8,7 @@ import "./userDashboard.css";
 import { useNavigate } from "react-router-dom";
 
 const UserDashboard = () => {
-  
+
   const [user, setUser] = useState(null);
   const [activeTab, setActiveTab] = useState("profile");
   const navigate = useNavigate();
@@ -16,30 +16,30 @@ const UserDashboard = () => {
 
 
   const fetchUser = async () => {
-  try {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    try {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!storedUser?.id) {
-      console.log("User ID missing");
-      return;
-    }
-
-    const { data } = await axios.get(
-      `http://localhost:5000/med/getoneuser/${storedUser.id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+      if (!storedUser?.id) {
+        console.log("User ID missing");
+        return;
       }
-    );
 
-    console.log(data);
-    setUser(data);
+      const { data } = await axios.get(
+        `https://medical-app-b2ku.onrender.com/med/getoneuser/${storedUser.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-  }
-};
+      console.log(data);
+      setUser(data);
+
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
 
 
   const handleLogout = () => {
@@ -47,7 +47,7 @@ const UserDashboard = () => {
     navigate("/login");
 
   };
-    useEffect(() => {
+  useEffect(() => {
     fetchUser();
   }, []);
 

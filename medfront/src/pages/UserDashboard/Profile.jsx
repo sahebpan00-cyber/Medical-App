@@ -11,7 +11,7 @@ const Profile = ({ user, setUser }) => {
   };
 
   const handleUpdate = async () => {
-    const res = await axios.put(`http://localhost:5000/med/updateuser/${user._id}`, formData, {
+    const res = await axios.put(`https://medical-app-b2ku.onrender.com/med/updateuser/${user._id}`, formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -64,7 +64,7 @@ const Profile = ({ user, setUser }) => {
       {isEditing ? (
         <button onClick={handleUpdate}>Update</button>
       ) : (
-        <button onClick={() => {setFormData(user); setIsEditing(true);}}>
+        <button onClick={() => { setFormData(user); setIsEditing(true); }}>
           Edit Profile
         </button>
       )}

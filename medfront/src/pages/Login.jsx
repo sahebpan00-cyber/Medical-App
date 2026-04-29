@@ -58,7 +58,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:5000/med/login',
+                'https://medical-app-b2ku.onrender.com/med/login',
                 {
                     email: formData.email,
                     password: formData.password,
