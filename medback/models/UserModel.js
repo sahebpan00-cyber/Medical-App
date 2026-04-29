@@ -1,4 +1,4 @@
-const mongoose=require('../database/dbconnect'); 
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -26,5 +26,5 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const user=mongoose.model("meduser", userSchema); 
-module.exports=user;
+const user = mongoose.model("meduser", userSchema);
+module.exports = user;
