@@ -1,0 +1,128 @@
+.services-page {
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+}
+
+/* Hero */
+.services-hero {
+  background: linear-gradient(135deg, #0f766e, #0ea5a4);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.services-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.services-hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Intro */
+.services-intro {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.services-intro h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 0 60px 80px;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+  font-size: 36px;
+  color: #0ea5a4;
+  margin-bottom: 15px;
+}
+
+.service-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  background: #f0fdfa;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.why-grid div {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.why-grid svg {
+  font-size: 40px;
+  color: #0f766e;
+  margin-bottom: 15px;
+}
+
+/* CTA */
+.services-cta {
+  background: linear-gradient(135deg, #0ea5a4, #22c55e);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.services-cta h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.services-cta button {
+  margin-top: 20px;
+  padding: 14px 40px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #0f766e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.services-cta button:hover {
+  background: #ecfeff;
+}

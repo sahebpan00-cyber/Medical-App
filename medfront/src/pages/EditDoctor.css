@@ -1,0 +1,41 @@
+.editDoctor-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.editDoctor-container h2 {
+  margin-bottom: 30px;
+  color: #1f7a6c;
+}
+
+.editDoctor-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.editDoctor-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.editDoctor-form input:focus {
+  outline: none;
+  border: 1px solid #1f7a6c;
+}
+
+.editDoctor-form button {
+  background-color: #1f7a6c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editDoctor-form button:hover {
+  background-color: #166b5d;
+}

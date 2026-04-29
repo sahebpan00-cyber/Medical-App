@@ -1,0 +1,133 @@
+.allUsers-container {
+    padding: 40px;
+    text-align: center;
+        position: relative;
+}
+
+.allUsers-container h2 {
+    margin-bottom: 30px;
+    color: #1f7a6c;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    color: black;
+}
+
+.user-table th {
+    background-color: #1f7a6c;
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 3px 6px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+.back-btn {
+    background-color: #95a5a6;
+    color: white;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    
+    
+}
+.admin-badge {
+  color: white;
+  background-color: green;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.user-badge {
+  color: white;
+  background-color: rgb(71, 6, 235);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 6px 14px;
+  background-color: #ba049f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background-color: #f50a0a;
+}
+
+@media (max-width:768px){
+
+  .user-table thead{
+    display:none;
+  }
+
+  .user-table,
+  .user-table tbody,
+  .user-table tr,
+  .user-table td{
+    display:block;
+    width:100%;
+  }
+
+  .user-table tr{
+    background:white;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+    padding:10px;
+  }
+
+  .user-table td{
+    text-align:right;
+    padding:10px;
+    border:1px;
+    color: #029996;
+    border-bottom:1px solid #eee;
+    position:relative;
+    
+    align-items: center;
+  }
+
+  .user-table td::before{
+    content:attr(data-label);
+    position:absolute;
+    left:10px;
+    font-weight:600;
+    color:#afb8c6;
+  }
+
+}

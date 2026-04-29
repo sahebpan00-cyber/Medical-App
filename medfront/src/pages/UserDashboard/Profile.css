@@ -1,0 +1,105 @@
+/* Page background */
+.profile-container {
+    min-height: 80vh;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.profile-container>h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container {
+    padding: 40px 20px;
+}
+
+/* Profile card box */
+.profile-container {
+    font-family: "Segoe UI", sans-serif;
+}
+
+.profile-container::before {
+    content: "";
+}
+
+/* Inner card */
+.profile-container {
+    text-align: center;
+}
+
+.profile-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 14px 18px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: #05b1ba;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Label */
+.profile-field label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Text */
+.profile-field span {
+    font-size: 15px;
+}
+
+/* Input */
+.profile-field input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 150px;
+    font-size: 14px;
+}
+
+/* Button */
+.profile-container button {
+    margin-top: 15px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #fff;
+    color: #5b86e5;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover */
+.profile-container button:hover {
+    background: #5b86e5;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .profile-field {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .profile-field input {
+        width: 100%;
+    }
+}

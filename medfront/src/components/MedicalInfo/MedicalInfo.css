@@ -1,0 +1,293 @@
+/* ===== MEDICAL INFO SECTION ===== */
+.medical-info-section {
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--light-blue) 50%, var(--bg-white) 100%);
+    position: relative;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    margin-top: var(--spacing-3xl);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.medical-info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+}
+
+/* Info Content */
+.medical-info-content {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(14, 165, 165, 0.1);
+    color: var(--primary-teal);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(14, 165, 165, 0.3);
+    width: fit-content;
+}
+
+.info-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--medical-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.info-description {
+    font-size: var(--font-size-base);
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Benefits List */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(14, 165, 165, 0.1);
+    transition: all var(--transition-base);
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-item:hover {
+    padding-left: var(--spacing-md);
+    color: var(--primary-teal);
+}
+
+.benefit-icon {
+    font-size: 1.3rem;
+    color: var(--medical-green);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.2);
+}
+
+.benefit-text {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: var(--font-size-base);
+}
+
+/* Visual Stats Grid */
+.medical-info-visual {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.stat-box {
+    background: var(--bg-white);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-2xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--stat-color, var(--primary-teal));
+    transition: all var(--transition-slow);
+    cursor: pointer;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--stat-color, var(--primary-teal)) 15%, white) 0%,
+        color-mix(in srgb, var(--stat-color, var(--primary-teal)) 10%, white) 100%);
+    transition: all var(--transition-slow);
+    flex-shrink: 0;
+}
+
+.stat-box:hover .stat-icon-wrapper {
+    background: linear-gradient(135deg,
+        var(--stat-color, var(--primary-teal)) 0%,
+        color-mix(in srgb, var(--stat-color, var(--primary-teal)) 70%, white) 100%);
+    transform: scale(1.1);
+}
+
+.stat-icon {
+    font-size: 1.8rem;
+    color: var(--stat-color, var(--primary-teal));
+    transition: all var(--transition-base);
+}
+
+.stat-box:hover .stat-icon {
+    color: var(--bg-white);
+    transform: scale(1.1);
+}
+
+.stat-content {
+    text-align: left;
+}
+
+.stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--stat-color, var(--primary-teal));
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-gray);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .medical-info-wrapper {
+        gap: var(--spacing-2xl);
+    }
+
+    .stat-box {
+        padding: var(--spacing-lg);
+    }
+
+    .stat-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stat-value {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .medical-info-section {
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+
+    .medical-info-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .info-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .info-description {
+        font-size: var(--font-size-sm);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .stat-box {
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+    }
+
+    .stat-icon-wrapper {
+        width: 55px;
+        height: 55px;
+    }
+
+    .stat-icon {
+        font-size: 1.4rem;
+    }
+
+    .stat-value {
+        font-size: var(--font-size-lg);
+    }
+
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .medical-info-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .info-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .info-badge {
+        font-size: var(--font-size-xs);
+    }
+
+    .benefit-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .stat-box {
+        padding: var(--spacing-md);
+    }
+
+    .stat-icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stat-icon {
+        font-size: 1.2rem;
+    }
+
+    .stat-value {
+        font-size: var(--font-size-base);
+    }
+
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+}

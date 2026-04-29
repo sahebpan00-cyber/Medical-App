@@ -1,0 +1,112 @@
+/* ===== TOPBAR STYLING ===== */
+.topbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-dark-teal) 100%);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topbar-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+}
+
+.topbar-item:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.topbar-item svg {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.topbar-item span {
+    font-size: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .topbar-content {
+        gap: var(--spacing-lg);
+    }
+
+    .topbar-item {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar-container {
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .topbar-content {
+        gap: var(--spacing-md);
+        justify-content: center;
+    }
+
+    .topbar-item {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs);
+        gap: var(--spacing-xs);
+    }
+
+    .topbar-item span {
+        display: none;
+    }
+
+    .topbar-item span:nth-child(1) {
+        display: inline;
+    }
+
+    .topbar-item:nth-child(2) span,
+    .topbar-item:nth-child(3) span,
+    .topbar-item:nth-child(4) span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-container {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .topbar-content {
+        gap: var(--spacing-sm);
+        justify-content: space-between;
+    }
+
+    .topbar-item {
+        font-size: var(--font-size-xs);
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .topbar-item span {
+        display: none;
+    }
+}

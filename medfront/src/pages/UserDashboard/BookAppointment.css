@@ -1,0 +1,144 @@
+.appointment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+/* Card */
+.appointment-card {
+
+  background-color: white;
+  padding: 35px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 10px 30px rgba(160, 160, 251, 0.59);
+  transition: transform 0.3s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Title */
+.appointment-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #038eaa;
+  font-size: 26px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #026e8b;
+}
+
+/* Inputs */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  background: #f9fafb;
+}
+
+/* Input focus effect */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4facfe;
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.4);
+  background: white;
+}
+
+/* Button section */
+.btn-section {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Book Button */
+.book-btn {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #0369a1, #075985);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  color: white;
+  font-weight: 600;
+  height: 50px;
+  border-radius: 8px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+  .appointment-card {
+    padding: 25px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+  }
+
+  .appointment-card h2 {
+    font-size: 22px;
+  }
+
+  .btn-section {
+    flex-direction: row;
+  }
+
+  .book-btn,
+  .cancel-btn {
+    width: 90%;
+    font-size: 10px;
+  }
+}
